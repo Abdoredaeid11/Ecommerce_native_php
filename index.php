@@ -22,6 +22,12 @@ include "includes/connect.php"; ?>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="login.php" class="nav-link">Login</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="register.php" class="nav-link">Regiser</a>
+      </li>
     </ul>
 
     <!-- SEARCH FORM -->
@@ -42,7 +48,7 @@ include "includes/connect.php"; ?>
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+ <!-- <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
   
 
@@ -59,58 +65,24 @@ include "includes/connect.php"; ?>
       </div>
 
       <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
-            <a href="category.php" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Caregory
-              </p>
-            </a>
-            <li class="nav-item has-treeview menu-open">
-            <a href="login.php" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Login
-              </p>
-            </a>
-            <li class="nav-item has-treeview menu-open">
-            <a href="register.php" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Register
-              </p>
-            </a>
-              
-              
-
-             
-            
-          
-
-       
-        </ul>
-      </nav>
+    
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Dashboard </h1>
+            <h1 class="m-0 text-dark">Home Page </h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="index.php  ">Home</a></li>
+              <li class="breadcrumb-item"><a href="index.php  ">  </a></li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -129,57 +101,244 @@ include "includes/connect.php"; ?>
 				</div>
 		  </div>
 		  </div>
-		  <div class="item">
-		  <div class="container">
-			<a href="register.html"><img style="width:100%" src="assets/themes/images/carousel/2.png" alt=""/></a>
-				<div class="carousel-caption">
-				  <h4>Second Thumbnail label</h4>
-				  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-				</div>
-		  </div>
-		  </div>
-		  <div class="item">
-		  <div class="container">
-			<a href="register.html"><img src="assets/themes/images/carousel/3.png" alt=""/></a>
-			<div class="carousel-caption">
-				  <h4>Second Thumbnail label</h4>
-				  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-				</div>
-			
-		  </div>
-		  </div>
-		   <div class="item">
-		   <div class="container">
-			<a href="register.html"><img src="assets/themes/images/carousel/4.png" alt=""/></a>
-			<div class="carousel-caption">
-				  <h4>Second Thumbnail label</h4>
-				  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-				</div>
+		  
+		
 		   
-		  </div>
-		  </div>
-		   <div class="item">
-		   <div class="container">
-			<a href="register.html"><img src="assets/themes/images/carousel/5.png" alt=""/></a>
-			<div class="carousel-caption">
-				  <h4>Second Thumbnail label</h4>
-				  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-			</div>
-		  </div>
-		  </div>
-		   <div class="item">
-		   <div class="container">
-			<a href="register.html"><img src="assets/themes/images/carousel/6.png" alt=""/></a>
-			<div class="carousel-caption">
-				  <h4>Second Thumbnail label</h4>
-				  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-				</div>
-		  </div>
-		  </div>
-		</div>
+		   
+		   
 		<a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
 		<a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
 	  </div> 
+</div>
+<div id="mainBody">
+	<div class="container">
+	<div class="row">
+<!-- Sidebar ================================================== -->
+
+<!-- Sidebar end=============================================== -->
+		<div class="span9">		
+			<div class="well well-small">
+			<h4>Featured Products <small class="pull-right">200+ featured products</small></h4>
+			<div class="row-fluid">
+			<div id="featured" class="carousel slide">
+			<div class="carousel-inner">
+			  <div class="item active">
+			  <ul class="thumbnails">
+				<li class="span3">
+				  <div class="thumbnail">
+				  <i class="tag"></i>
+					<a href="product_details.html"><img src="assets/themes/images/products/b1.jpg" alt=""></a>
+					<div class="caption">
+					  <h5>Product name</h5>
+					  <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+				  <i class="tag"></i>
+					<a href="product_details.html"><img src="assets/themes/images/products/b2.jpg" alt=""></a>
+					<div class="caption">
+					  <h5>Product name</h5>
+					  <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+				  <i class="tag"></i>
+					<a href="product_details.html"><img src="assets/themes/images/products/b3.jpg" alt=""></a>
+					<div class="caption">
+					  <h5>Product name</h5>
+					   <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+				  <i class="tag"></i>
+					<a href="product_details.html"><img src="assets/themes/images/products/b4.jpg" alt=""></a>
+					<div class="caption">
+					  <h5>Product name</h5>
+					   <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+			  </ul>
+			  </div>
+			   <div class="item">
+			  <ul class="thumbnails">
+				<li class="span3">
+				  <div class="thumbnail">
+				  <i class="tag"></i>
+					<a href="product_details.html"><img src="assets/themes/images/products/5.jpg" alt=""></a>
+					<div class="caption">
+					  <h5>Product name</h5>
+					  <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+				  <i class="tag"></i>
+					<a href="product_details.html"><img src="assets/themes/images/products/6.jpg" alt=""></a>
+					<div class="caption">
+					  <h5>Product name</h5>
+					  <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="assets/themes/images/products/7.jpg" alt=""></a>
+					<div class="caption">
+					  <h5>Product name</h5>
+					   <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="assets/themes/images/products/8.jpg" alt=""></a>
+					<div class="caption">
+					  <h5>Product name</h5>
+					   <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+			  </ul>
+			  </div>
+			   <div class="item">
+			  <ul class="thumbnails">
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="assets/themes/images/products/9.jpg" alt=""></a>
+					<div class="caption">
+					  <h5>Product name</h5>
+					  <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="assets/themes/images/products/10.jpg" alt=""></a>
+					<div class="caption">
+					  <h5>Product name</h5>
+					  <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="assets/themes/images/products/11.jpg" alt=""></a>
+					<div class="caption">
+					  <h5>Product name</h5>
+					   <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="assets/themes/images/products/1.jpg" alt=""></a>
+					<div class="caption">
+					  <h5>Product name</h5>
+					   <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+			  </ul>
+			  </div>
+			   <div class="item">
+			  <ul class="thumbnails">
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="assets/themes/images/products/2.jpg" alt=""></a>
+					<div class="caption">
+					  <h5>Product name</h5>
+					  <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="assets/themes/images/products/3.jpg" alt=""></a>
+					<div class="caption">
+					  <h5>Product name</h5>
+					  <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="assets/themes/images/products/4.jpg" alt=""></a>
+					<div class="caption">
+					  <h5>Product name</h5>
+					   <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="assets/themes/images/products/5.jpg" alt=""></a>
+					<div class="caption">
+					  <h5>Product name</h5>
+					   <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+			  </ul>
+			  </div>
+			  </div>
+			  <a class="left carousel-control" href="#featured" data-slide="prev">‹</a>
+			  <a class="right carousel-control" href="#featured" data-slide="next">›</a>
+			  </div>
+			  </div>
+		</div>
+		<h4>Latest Products </h4>
+			  <ul class="thumbnails">
+				<li class="span3">
+				  <div class="thumbnail">
+					<a  href="product_details.html"><img src="assets/themes/images/products/6.jpg" alt=""/></a>
+					<div class="caption">
+					  <h5>Product name</h5>
+					  <p> 
+						Lorem Ipsum is simply dummy text. 
+					  </p>
+					 
+					  <h4 style="text-align:center"><a class="btn" href="product_details.html"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a  href="product_details.html"><img src="assets/themes/images/products/7.jpg" alt=""/></a>
+					<div class="caption">
+					  <h5>Product name</h5>
+					  <p> 
+						Lorem Ipsum is simply dummy text. 
+					  </p>
+					 <h4 style="text-align:center"><a class="btn" href="product_details.html"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a  href="product_details.html"><img src="assets/themes/images/products/8.jpg" alt=""/></a>
+					<div class="caption">
+					  <h5>Product name</h5>
+					  <p> 
+						Lorem Ipsum is simply dummy text. 
+					  </p>
+					   <h4 style="text-align:center"><a class="btn" href="product_details.html"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a></h4>
+					</div>
+				  </div>
+				</li>
+				
+			  </ul>	
+
+		</div>
+		</div>
+	</div>
 </div>
 
     <!-- Main content -->

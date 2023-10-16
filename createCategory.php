@@ -21,7 +21,7 @@ include "includes/connect.php";
            
               
                 <label class="mt-4" for="inputName"> image</label>
-                <input type="file" src="submit.png" alt="Submit">
+                <input type="file" name="image" src="submit.png" alt="Submit">
            
               <br>
                 <label class="mt-4" for="inputName">is_active</label>
@@ -32,10 +32,20 @@ include "includes/connect.php";
 </form>
 
 <?php if($_SERVER['REQUEST_METHOD']=='POST'){
-
+$image=$_POST['image'];
 $name=$_POST['name'];
 $descrption=$_POST['descrption'];
 $is_active=$_POST['isactive'];
+if (!isset($image_file)) {
+  die('No file uploaded.');
+}
+move_uploaded_file(
+  // Temp image location
+  $image_file["tmp_name"],
+
+  // New image location, __DIR__ is the location of the current PHP file
+  __DIR__ . "assets/images/" . $image_file["name"]
+);
 
   $stmt ="INSERT INTO category (name,descrption,img,is_active) VALUES ('$name','$descrption','image',$is_active)";
 
