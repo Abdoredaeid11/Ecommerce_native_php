@@ -25,29 +25,37 @@ include "includes/connect.php";
            
               <br>
                 <label class="mt-4" for="inputName">is_active</label>
-                <input type="checkbox" name="isactive" value="1">
+                <input type="checkbox" name="isactive" checked="false" >
             <br>
                 <button class="mt-4" type="submit"> submit </button>   
                   
 </form>
 
-<?php if($_SERVER['REQUEST_METHOD']=='POST'){
-$image=$_POST['image'];
+<?php
+if($_SERVER['REQUEST_METHOD']=='POST'){
 $name=$_POST['name'];
 $descrption=$_POST['descrption'];
-$is_active=$_POST['isactive'];
+$image_file = $_FILES["image"];
 if (!isset($image_file)) {
   die('No file uploaded.');
 }
+
+// imageeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee problemmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
 move_uploaded_file(
   // Temp image location
-  $image_file["tmp_name"],
+  $image=$image_file["tmp_name"],
 
   // New image location, __DIR__ is the location of the current PHP file
-  __DIR__ . "assets/images/" . $image_file["name"]
+  __DIR__ . "/assets/images/" . $image_file["name"]
 );
+ if(isset($_POST['isactive'])){
+  $is_active=1; 
+ }
+ else
+ {$is_active=0;
+}
 
-  $stmt ="INSERT INTO category (name,descrption,img,is_active) VALUES ('$name','$descrption','image',$is_active)";
+  $stmt ="INSERT INTO category (name,descrption,img,is_active) VALUES ('$name','$descrption','$image',$is_active)";
 
                       // Bind the form data to the statement
                       if (mysqli_query($conn, $stmt)) {
