@@ -128,8 +128,16 @@ include "includes/connect.php"; ?>
           
             <!-- small box -->
           </div>
-          <a href="createCategory.php" class="mb-4"><button type="button"  class="btn btn-outline-warning">Insert Category</button></a>
-<br>
+          <?php
+            if(isset($_GET['id'])){
+              $id=$_GET['id'];
+              echo "
+          <a href='createCategory.php?id=$id' class='mb-4'><button type='button'  class='btn btn-outline-warning'>Insert Product</button></a>
+";}
+
+?>
+
+          <br>
 
           <table class="table table-striped" >
   <thead>
@@ -137,6 +145,7 @@ include "includes/connect.php"; ?>
       <th scope="col">#</th>
       <th scope="col">name</th>
       <th scope="col">descrption</th>
+      <th scope="col">price</th>
       <th scope="col" style="text-align: center" width="150">image</th>
       <th scope="col">is active</th>
       <th scope="col" style="text-align: center;">controls</th>
@@ -146,8 +155,10 @@ include "includes/connect.php"; ?>
   </thead>
   <tbody>
   <?php 
-               
-               $query="SELECT * FROM category";
+                     if(isset($_GET['id'])){
+                      $id=$_GET['id'];
+
+               $query="SELECT * FROM products where category_id = $id ";
                $result = mysqli_query($conn, $query);
 
 
@@ -161,9 +172,10 @@ include "includes/connect.php"; ?>
                   <th scope='row'>{$row['id']}</th>
                   <td>{$row['name']}</td>
                   <td>{$row['descrption']}</td>
+                  <td>{$row['price']}</td>
                   <td  style='text-align: center;'><img style='width:100%' src='assets/images/{$row['img']}' alt=''/></td>
                   <td > $is_active   </td>
-                  <td style='text-align: center;'> <a href='product.php?id={$row["id"]}' class='mb-4'><button type='button' class='btn btn-outline-primary'>Show Products</button></a>
+                  <td style='text-align: center;'>  
                   <a href='editCategory.php?id=$id' class='mb-4'><button type='button' class='btn btn-outline-success'>Edit</button></a>
                   <a href='deleteCategory.php' class='mb-4'><button type='button' class='btn btn-outline-danger'>Delete</button></a>
                      </td>
@@ -172,7 +184,7 @@ include "includes/connect.php"; ?>
                 </tr>";
 
 
-                 }}
+                 }}}
                  ?>
 
    

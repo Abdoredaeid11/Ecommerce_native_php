@@ -94,13 +94,30 @@ include "includes/connect.php"; ?>
 		<div class="carousel-inner">
 		  <div class="item active">
 		  <div class="container">
-			<a href="register.html"><img style="width:100%" src="assets/themes/images/carousel/1.png" alt="special offers"/></a>
+			<a href="register.html"><img style="width:100%" src="assets/images/1.png" alt="special offers"/></a>
 			<div class="carousel-caption">
 				  <h4>Second Thumbnail label</h4>
 				  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
 				</div>
 		  </div>
 		  </div>
+		  <?php 
+		  $sql = "SELECT * FROM category ORDER BY id LIMIT 10; ";
+		  $result = mysqli_query($conn, $sql);
+		  while($row = mysqli_fetch_assoc($result)) {
+			echo"
+		   <div class='item '>
+		  <div class='container'>
+			<a href='register.html'><img style='width:100%' src='assets/images/{$row['img']}' alt=''/></a>
+				<div class='carousel-caption'>
+				  <h4>Second Thumbnail label</h4>
+				  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+				</div>
+		  </div>
+		  </div>
+
+		  ";}
+		  ?>
 		  
 		
 		   
@@ -109,6 +126,7 @@ include "includes/connect.php"; ?>
 		<a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
 		<a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
 	  </div> 
+	  
 </div>
 <div id="mainBody">
 	<div class="container">
