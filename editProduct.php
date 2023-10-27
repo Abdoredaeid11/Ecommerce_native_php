@@ -14,7 +14,7 @@ include "includes/connect.php";
 <?php if(isset($_GET['id'])){
                         $id=$_GET['id'];
                     }
-                    $query="SELECT * FROM category";
+                    $query="SELECT * FROM products";
                     $result = mysqli_query($conn, $query);
      
      
@@ -30,8 +30,11 @@ include "includes/connect.php";
               
                 <label for="inputName" > Descrption</label>
                 <input  type="text" id="inputName" value="<?php echo $row['descrption'];?>" name="descrption" class="form-control">
+                
+                <label for="inputName" > Price</label>
+                <input  type="text" id="inputName" value="<?php echo $row['price'];?>" name="price" class="form-control">
            
-              
+                <img style="width:20%" src="assets/images/<?php echo $row['img'];?>" alt=''/>
                 <label class="mt-4" for="inputName"> image</label>
                 <input type="file" src="submit.png" alt="Submit">
            

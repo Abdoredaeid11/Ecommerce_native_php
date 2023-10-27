@@ -165,7 +165,7 @@ include "includes/connect.php"; ?>
                   <td > $is_active   </td>
                   <td style='text-align: center;'> <a href='product.php?id={$row["id"]}' class='mb-4'><button type='button' class='btn btn-outline-primary'>Show Products</button></a>
                   <a href='editCategory.php?id=$id' class='mb-4'><button type='button' class='btn btn-outline-success'>Edit</button></a>
-                  <a href='deleteCategory.php' class='mb-4'><button type='button' class='btn btn-outline-danger'>Delete</button></a>
+                  <a href='deleteCategory.php'?$id class='mb-4'><button type='button' class='btn btn-outline-danger'>Delete</button></a>
                      </td>
 
             

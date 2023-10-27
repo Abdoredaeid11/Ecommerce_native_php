@@ -132,7 +132,7 @@ include "includes/connect.php"; ?>
             if(isset($_GET['id'])){
               $id=$_GET['id'];
               echo "
-          <a href='createCategory.php?id=$id' class='mb-4'><button type='button'  class='btn btn-outline-warning'>Insert Product</button></a>
+          <a href='createProduct.php?id=$id' class='mb-4'><button type='button'  class='btn btn-outline-warning'>Insert Product</button></a>
 ";}
 
 ?>
@@ -176,8 +176,8 @@ include "includes/connect.php"; ?>
                   <td  style='text-align: center;'><img style='width:100%' src='assets/images/{$row['img']}' alt=''/></td>
                   <td > $is_active   </td>
                   <td style='text-align: center;'>  
-                  <a href='editCategory.php?id=$id' class='mb-4'><button type='button' class='btn btn-outline-success'>Edit</button></a>
-                  <a href='deleteCategory.php' class='mb-4'><button type='button' class='btn btn-outline-danger'>Delete</button></a>
+                  <a href='editProduct.php?id=$id' class='mb-4'><button type='button' class='btn btn-outline-success'>Edit</button></a>
+                  <a href='deleteProduct.php?id=$id' class='mb-4'><button type='button' class='btn btn-outline-danger'>Delete</button></a>
                      </td>
 
             

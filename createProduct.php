@@ -58,9 +58,10 @@ include "includes/connect.php";
                      else
                      {$is_active=0;
                     }
-                          
-                     $stmt ="INSERT INTO products (name,descrption,price,img,is_active) VALUES ('$name','$descrption','$price','$image_name',$is_active)";
-                 
+                       if (isset($_GET['id'])){ 
+                        $category_id=$_GET['id'];   
+                     $stmt ="INSERT INTO products (category_id,name,descrption,price,img,is_active) VALUES ($category_id,'$name','$descrption','$price','$image_name','$is_active')";
+                       }
                                           // Bind the form data to the statement
                                           if (mysqli_query($conn, $stmt)) {
                                               echo "New record created successfully";
