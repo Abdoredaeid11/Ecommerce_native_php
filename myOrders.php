@@ -110,7 +110,7 @@ include "includes/connect.php"; ?>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="index.php  ">Home</a></li>
+              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -148,7 +148,7 @@ include "includes/connect.php"; ?>
   <?php 
      
 $user_id=$_SESSION['user_id'];
-               $query="SELECT products.name,products.img,products.price
+               $query="SELECT products.name,products.img,products.price,orders.amount,orders.id
                FROM orders
                INNER JOIN products ON products.id = orders.product_id
                INNER JOIN users ON orders.user_id = users.id
@@ -160,22 +160,24 @@ $user_id=$_SESSION['user_id'];
                 if (mysqli_num_rows($result) > 0) {
                 // output data of each row
                  while($row = mysqli_fetch_assoc($result)) {
+                  if(isset($row['id']))
+                  $id=$row['id'];
+                  ?>
+                 <tr>
+                  <td> <?php echo $row["name"]; ?></td>
 
-                echo " <tr>
-                  <td>{$row['name']}</td>
+                  <td><?php echo $row['price']; ?></td>
+                  <td  style="text-align: center;"><img style="width:20%" src="assets/images/<?php echo $row["img"] ?>" alt=""/></td>
+                  <td style="text-align: center;"><?php echo $row["amount"];?></td>
 
-                  <td>{$row['price']}</td>
-                  <td  style='text-align: center;'><img style='width:20%' src='assets/images/{$row['img']}' alt=''/></td>
-                  <td style='text-align: center;'>1</td>
-
-                  <td style='text-align: center;'>  
-                  <a href='deleteOrder.php' class='mb-4'><button type='button' class='btn btn-outline-danger'>Delete</button></a>
+                  <td style="text-align: center;">  
+                  <a href="deleteOrder.php?id=<?php if(isset($row["id"])){echo $row["id"];};?>" class="mb-4"><button type="button" class="btn btn-outline-danger">Delete</button></a> 
                      </td>
 
             
-                </tr>";
+                </tr>
 
-
+<?php
                  }}
                  ?>
 

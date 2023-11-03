@@ -146,6 +146,8 @@ include "includes/connect.php"; ?>
       <th scope="col">name</th>
       <th scope="col">descrption</th>
       <th scope="col">price</th>
+      <th scope="col">number</th>
+
       <th scope="col" style="text-align: center" width="150">image</th>
       <th scope="col">is active</th>
       <th scope="col" style="text-align: center;">controls</th>
@@ -173,6 +175,8 @@ include "includes/connect.php"; ?>
                   <td>{$row['name']}</td>
                   <td>{$row['descrption']}</td>
                   <td>{$row['price']}</td>
+                  <td>{$row['number']}</td>
+
                   <td  style='text-align: center;'><img style='width:100%' src='assets/images/{$row['img']}' alt=''/></td>
                   <td > $is_active   </td>
                   <td style='text-align: center;'>  

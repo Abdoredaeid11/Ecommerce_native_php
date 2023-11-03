@@ -119,7 +119,7 @@ include "includes/connect.php"; ?>
 		  ";}
 		  ?>
 		  
-		
+			
 		   
 		   
 		   
@@ -161,11 +161,15 @@ include "includes/connect.php"; ?>
 					  <h4>
 					  <form class='m-0' action='' method='post'>
 					  <input type='text' name='id' hidden value='{$row['id']}'>
+					<input type='text' name='number' hidden value='{$row['number']}'>
 
-					  <button class='btn' href=''>Add to Card</button>
-					  </form>
-					   <span class='pull-right'>{$row['price']}$</span></h4>
-					</div>
+					<input style='width: 7em' type='number' value='Add to Order' name='amount' required >
+
+					  <button class='btn' tybe='submit' =''>Add to Card<i class='icon-shopping-cart'></i></button>					   
+					  <span class='pull-right ml-3'>{$row['price']}$</span></h4>
+
+						  </form>
+					   </div>
 				  </div>
 				</li>
 				";}}?>
@@ -183,16 +187,25 @@ include "includes/connect.php"; ?>
                 // output data of each row
                  while($row = mysqli_fetch_assoc($result)) {
 			echo"
-				<li class='span3'>
-				  <div class='thumbnail'>
-				  <i class='tag'></i>
-					<a href='product_details.html'><img src='assets/images/{$row['img']}' alt=''></a>
-					<div class='caption'>
-					  <h5>{$row['name']}</h5>
-					  <h4><a class='btn' href=''>Add to Card</a> <span class='pull-right'>{$row['price']}$</span></h4>
-					</div>
-				  </div>
-				</li>
+			<li class='span3'>
+			<div class='thumbnail'>
+			<i class='tag'></i>
+			  <a href='product_details.html'><img src='assets/images/{$row['img']}' alt=''></a>
+			  <div class='caption'>
+				<h5>{$row['name']}</h5>
+
+				<h4>
+				<form class='m-0' action='' method='post'>
+				<input type='text' name='id' hidden value='{$row['id']}'>
+				<input type='text' name='number' hidden value='{$row['number']}'>
+
+				<input style='width: 7em' type='number' value='Add to Order' name='amount' value='1' required >
+
+				<button class='btn' tybe='submit' =''>Add to Card<i class='icon-shopping-cart'></i></button>					   
+				<span class='pull-right ml-3'>{$row['price']}$</span></h4>				</form>
+			  </div>
+			</div>
+		  </li>
 				";}}?>
 
 			  </ul>
@@ -208,10 +221,35 @@ include "includes/connect.php"; ?>
 		<?php if($_SERVER['REQUEST_METHOD']=='POST'){
 					$product_id=$_POST['id'];
 					$user_id=$_SESSION['user_id'];
-					$stmt="INSERT INTO orders (user_id,product_id) VALUES ($user_id,$product_id)";
+					$number=$_POST['number'];
+					if(isset($_POST['amount'])){
+					$amount=$_POST['amount'];
+					if($amount>$number){echo "<h1>cant take this number of product</h1>";}
+					$stmt="INSERT INTO orders (user_id,product_id,amount) VALUES ($user_id,$product_id,$amount)";
 					mysqli_query($conn, $stmt);
-		} 
+		} }
 		?>
+
+		<?php 
+		   if(isset($_GET['id'])){
+			$id=$_GET['id'];
+
+	 $query="SELECT * FROM products where category_id = $id ";
+	 $result = mysqli_query($conn, $query);
+
+
+	  if (mysqli_num_rows($result) > 0) {
+	  // output data of each row
+		while($row = mysqli_fetch_assoc($result)) {{ 
+
+
+
+		}}}}
+	   
+	   ?>
+
+<a href="myOrders.php" class="mb-4"><button type="button"  class="btn btn-outline-warning">my orders</button></a>
+ 
 		<h4>Latest Products </h4>
 			  <ul class="thumbnails">
 				<li class="span3">

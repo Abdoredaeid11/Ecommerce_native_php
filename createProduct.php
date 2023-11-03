@@ -22,6 +22,10 @@ include "includes/connect.php";
 
                 <label for="inputName" > Price</label>
                 <input  type="text" id="inputName" name="price" class="form-control">
+
+
+                <label for="inputName" > number</label>
+                <input  type="text" id="inputName" name="number" class="form-control">
            
               
                 <label class="mt-4" for="inputName"> image</label>
@@ -40,6 +44,7 @@ include "includes/connect.php";
                     $name=$_POST['name'];
                     $price=$_POST['price'];
                     $descrption=$_POST['descrption'];
+                    $number=$_POST['number'];
                     $image_name = $_FILES["image"]["name"];
                     if (!isset($image_name)) {
                       die('No file uploaded.');
@@ -60,7 +65,7 @@ include "includes/connect.php";
                     }
                        if (isset($_GET['id'])){ 
                         $category_id=$_GET['id'];   
-                     $stmt ="INSERT INTO products (category_id,name,descrption,price,img,is_active) VALUES ($category_id,'$name','$descrption','$price','$image_name','$is_active')";
+                     $stmt ="INSERT INTO products (category_id,name,descrption,number,price,img,is_active) VALUES ($category_id,'$name','$descrption',$number,'$price','$image_name','$is_active')";
                        }
                                           // Bind the form data to the statement
                                           if (mysqli_query($conn, $stmt)) {

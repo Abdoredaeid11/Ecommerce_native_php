@@ -4,19 +4,6 @@ include "includes/connect.php"; ?>
 <!DOCTYPE html>
 
 <html>
-
-<?php 
- $query="SELECT * FROM users";
- $result = mysqli_query($conn, $query);
-
-
-  if (mysqli_num_rows($result) > 0) {
-  // output data of each row
-   while($row = mysqli_fetch_assoc($result)) {
-if($row["is_admin"]==1){
-?>
-
-
 <?php include "includes/head.php"; ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -30,7 +17,7 @@ if($row["is_admin"]==1){
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index.php" class="nav-link">Home</a>
+        <a href="index3.html" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -119,7 +106,7 @@ if($row["is_admin"]==1){
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Dashboard </h1>
+            <h1 class="m-0 text-dark">My Order </h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -141,44 +128,50 @@ if($row["is_admin"]==1){
           
             <!-- small box -->
           </div>
-          <a href="createCategory.php" class="mb-4"><button type="button"  class="btn btn-outline-warning">Insert Category</button></a>
-<br>
+   
+
+          <br>
 
           <table class="table table-striped" >
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">name</th>
-      <th scope="col">descrption</th>
-      <th scope="col" style="text-align: center" width="150">image</th>
-      <th scope="col">is active</th>
-      <th scope="col" style="text-align: center;">controls</th>
+      <th scope="col">user_id</th>
+      <th scope="col">product_id</th>
+      <th scope="col"  >number</th>
+      <th scope="col"  >status</th>
+      <th scope="col" style="text-align: center;">control</th>
 
 
     </tr>
   </thead>
   <tbody>
   <?php 
-               
-               $query="SELECT * FROM category";
+     
+$user_id=$_SESSION['user_id'];
+               $query="SELECT * FROM orders
+            
+                ";
                $result = mysqli_query($conn, $query);
 
 
                 if (mysqli_num_rows($result) > 0) {
                 // output data of each row
                  while($row = mysqli_fetch_assoc($result)) {
-                  $isactive= $row['is_active'];
-                  $is_active=($isactive==1) ? 'active':'not active';
-                  $id=$row['id'];
+                        $id=$row['id'];
                 echo " <tr>
-                  <th scope='row'>{$row['id']}</th>
-                  <td>{$row['name']}</td>
-                  <td>{$row['descrption']}</td>
-                  <td  style='text-align: center;'><img style='width:100%' src='assets/images/{$row['img']}' alt=''/></td>
-                  <td > $is_active   </td>
-                  <td style='text-align: center;'> <a href='product.php?id={$row["id"]}' class='mb-4'><button type='button' class='btn btn-outline-primary'>Show Products</button></a>
-                  <a href='editCategory.php?id=$id' class='mb-4'><button type='button' class='btn btn-outline-success'>Edit</button></a>
-                  <a href='deleteCategory.php'?$id class='mb-4'><button type='button' class='btn btn-outline-danger'>Delete</button></a>
+                  <td>{$row['user_id']}</td>
+
+                  <td>{$row['product_id']}</td>
+                  <td>{$row['amount']}</td>
+                  <td>{$row['status']}</td>
+
+
+              
+
+                  <td style='text-align: center;'>  
+                  <a href='deleteOrder.php?id=$id' class='mb-4'><button type='button' class='btn btn-outline-danger'>Delete</button></a>
+                  <a href='editOrder.php' class='mb-4'><button type='button' class='btn btn-outline-danger'>Edit</button></a>
+
                      </td>
 
             
@@ -186,16 +179,6 @@ if($row["is_admin"]==1){
 
 
                  }}
-
-
-
-                 ?>
-                 <?php
-                 }
-else{
-  echo "cant open this page ";
-}
-                }}
                  ?>
 
    
