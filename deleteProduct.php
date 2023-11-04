@@ -6,6 +6,8 @@ if(isset($_GET['id'])){
     $query="DELETE from products where id = $id";
     if (mysqli_query($conn, $query)) {
         echo " record deleted successfully";
+        header('location:product.php');
+
       } else {
         echo "Error: " . $query . "<br>" . mysqli_error($conn);
       }

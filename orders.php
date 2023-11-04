@@ -17,7 +17,7 @@ include "includes/connect.php"; ?>
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="index.php" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -106,7 +106,7 @@ include "includes/connect.php"; ?>
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">My Order </h1>
+            <h1 class="m-0 text-dark"> Orders </h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -135,8 +135,7 @@ include "includes/connect.php"; ?>
           <table class="table table-striped" >
   <thead>
     <tr>
-      <th scope="col">user_id</th>
-      <th scope="col">product_id</th>
+      <th scope="col">name</th>
       <th scope="col"  >number</th>
       <th scope="col"  >status</th>
       <th scope="col" style="text-align: center;">control</th>
@@ -147,11 +146,15 @@ include "includes/connect.php"; ?>
   <tbody>
   <?php 
      
-$user_id=$_SESSION['user_id'];
-               $query="SELECT * FROM orders
-            
-                ";
-               $result = mysqli_query($conn, $query);
+     $user_id=$_SESSION['user_id'];
+     $query="SELECT products.name,products.img,products.price,orders.amount,orders.id,users.name,orders.status
+     FROM orders
+     INNER JOIN products ON products.id = orders.product_id
+     INNER JOIN users ON orders.user_id = users.id
+     where users.id = $user_id;
+      ";
+     $result = mysqli_query($conn, $query);
+
 
 
                 if (mysqli_num_rows($result) > 0) {
@@ -159,9 +162,8 @@ $user_id=$_SESSION['user_id'];
                  while($row = mysqli_fetch_assoc($result)) {
                         $id=$row['id'];
                 echo " <tr>
-                  <td>{$row['user_id']}</td>
 
-                  <td>{$row['product_id']}</td>
+                  <td>{$row['name']}</td>
                   <td>{$row['amount']}</td>
                   <td>{$row['status']}</td>
 

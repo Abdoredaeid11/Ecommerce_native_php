@@ -17,7 +17,7 @@ include "includes/connect.php"; ?>
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="index.php" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -224,7 +224,9 @@ include "includes/connect.php"; ?>
 					$number=$_POST['number'];
 					if(isset($_POST['amount'])){
 					$amount=$_POST['amount'];
-					if($amount>$number){echo "<h1>cant take this number of product</h1>";}
+					if($amount>$number){echo "<div class='alert alert-danger'>
+						<strong>Alert!</strong> cant order this number of product.
+						</div>";}
 					$stmt="INSERT INTO orders (user_id,product_id,amount) VALUES ($user_id,$product_id,$amount)";
 					mysqli_query($conn, $stmt);
 		} }

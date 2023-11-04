@@ -13,11 +13,12 @@ include "includes/connect.php"; ?>
   if (mysqli_num_rows($result) > 0) {
   // output data of each row
    while($row = mysqli_fetch_assoc($result)) {
-if($row["is_admin"]==1){
 ?>
 
 
-<?php include "includes/head.php"; ?>
+<?php include "includes/head.php";
+if($row["is_admin"]==1){
+  ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -193,7 +194,9 @@ if($row["is_admin"]==1){
                  <?php
                  }
 else{
-  echo "cant open this page ";
+  echo "<div class='alert alert-danger'>
+  <strong>Alert!</strong> cant order this number of product.
+  </div> ";
 }
                 }}
                  ?>
