@@ -210,11 +210,12 @@ include "includes/connect.php"; ?>
 					$number=$_POST['number'];
 					if(isset($_POST['amount'])){
 					$amount=$_POST['amount'];
-					if($amount>$number){echo "<div class='alert alert-danger'>
+					if($amount>$number||$amount<0){echo "<div class='alert alert-danger'>
 						<strong>Alert!</strong> cant order this number of product.
 						</div>";}
+						else{
 					$stmt="INSERT INTO orders (user_id,product_id,amount) VALUES ($user_id,$product_id,$amount)";
-					mysqli_query($conn, $stmt);
+					mysqli_query($conn, $stmt);}
 		} }
 		?>
 
