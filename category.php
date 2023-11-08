@@ -33,9 +33,7 @@ if($row["is_admin"]==1){
       <li class="nav-item d-none d-sm-inline-block">
         <a href="index.php" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
+      
     </ul>
 
     <!-- SEARCH FORM -->
@@ -195,7 +193,7 @@ if($row["is_admin"]==1){
                  }
 else{
   echo "<div class='alert alert-danger'>
-  <strong>Alert!</strong> cant order this number of product.
+  <strong>Alert!</strong> cant open this page beacuse you arent An Admin.
   </div> ";
 }
                 }}

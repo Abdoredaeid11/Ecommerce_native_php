@@ -84,14 +84,7 @@ include "includes/connect.php"; ?>
                 Register
               </p>
             </a>
-              
-              
 
-             
-            
-          
-
-       
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -147,7 +140,7 @@ include "includes/connect.php"; ?>
   <tbody>
   <?php 
      
-$user_id=$_SESSION['user_id'];
+               $user_id=$_SESSION['user_id'];
                $query="SELECT products.name,products.img,products.price,orders.amount,orders.id
                FROM orders
                INNER JOIN products ON products.id = orders.product_id

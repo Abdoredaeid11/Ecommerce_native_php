@@ -64,7 +64,7 @@ include "includes/connect.php"; ?>
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
-            <a href="" class="nav-link active">
+            <a href="category.php" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Caregory
@@ -151,7 +151,7 @@ include "includes/connect.php"; ?>
      FROM orders
      INNER JOIN products ON products.id = orders.product_id
      INNER JOIN users ON orders.user_id = users.id
-     where users.id = $user_id;
+     ;
       ";
      $result = mysqli_query($conn, $query);
 
